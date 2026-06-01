@@ -1,13 +1,13 @@
 <!-- footer -->
-<footer>
-  <!-- newsletter -->
-  {{ if site.Params.subscription.enable }}
-  {{ with site.Params.subscription }}
-  <div class="newsletter">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
-          <h3 class="text-white mb-4">{{ i18n "subscribe_newsletter" }}</h3>
+<footer role="contentinfo">
+<!-- newsletter -->
+{{ if site.Params.subscription.enable }}
+{{ with site.Params.subscription }}
+<div class="newsletter">
+<div class="container">
+<div class="row">
+<div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+<h2 class="text-white mb-4 h3">{{ i18n "subscribe_newsletter" }}</h2>
           <form action="{{ .mailchimp_form_action }}" method="post" name="mc-embedded-subscribe-form" target="_blank">
             <div class="input-wrapper">
               <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="{{ i18n "enter_email" }}">
@@ -98,11 +98,6 @@
   </div>
 </footer>
 <!-- /footer -->
-
-{{ "<!-- Google Map API -->" | safeHTML }}
-{{ with site.Params.map.gmap_api }}
-<script src="{{ . | safeURL }}"></script>
-{{ end }}
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range site.Params.plugins.js}}
